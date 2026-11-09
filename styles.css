@@ -1,0 +1,123 @@
+/* Cimentar México — Pon tu primera piedra */
+:root {
+  --tierra: #9a3f1f;
+  --tierra-oscuro: #6e2c14;
+  --arena: #f7efe6;
+  --piedra: #2f3e46;
+  --verde-hoja: #3a7d44;
+  --dorado: #d9a441;
+  --blanco: #fffdf9;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--arena);
+  color: var(--piedra);
+  line-height: 1.65;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(160deg, var(--tierra-oscuro) 0%, var(--tierra) 55%, #b85c33 100%);
+  color: var(--blanco);
+  padding-bottom: 4.5rem;
+}
+.nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 6%;
+}
+.logo { font-weight: 700; font-size: 1.2rem; letter-spacing: .3px; }
+.nav-cta {
+  color: var(--blanco); text-decoration: none; font-weight: 600;
+  border: 2px solid var(--dorado); border-radius: 999px; padding: .4rem 1.1rem;
+  transition: background .2s;
+}
+.nav-cta:hover { background: var(--dorado); color: var(--tierra-oscuro); }
+.hero-content { max-width: 860px; margin: 0 auto; padding: 3rem 6% 0; text-align: center; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.15; margin-bottom: 1rem; }
+.tagline { font-size: 1.12rem; margin-bottom: .6rem; opacity: .96; }
+.hero-actions { margin-top: 2rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.btn {
+  display: inline-block; text-decoration: none; font-weight: 700;
+  border-radius: 999px; padding: .85rem 1.8rem; border: none; cursor: pointer;
+  font-size: 1rem; transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.btn-primary { background: var(--dorado); color: var(--tierra-oscuro); }
+.btn-ghost { background: transparent; color: var(--blanco); border: 2px solid var(--blanco); }
+
+/* Secciones */
+section { max-width: 1000px; margin: 0 auto; padding: 3.5rem 6%; }
+section h2 { font-size: 1.9rem; color: var(--tierra-oscuro); margin-bottom: 1rem; text-align: center; }
+.intro, section > p { text-align: center; max-width: 720px; margin: 0 auto 2rem; }
+
+/* Principios */
+.grid-5 {
+  display: grid; gap: 1.1rem;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  margin-top: 2rem;
+}
+.card {
+  background: var(--blanco); border-radius: 14px; padding: 1.3rem;
+  border-top: 4px solid var(--verde-hoja);
+  box-shadow: 0 3px 12px rgba(47,62,70,.08);
+}
+.card h3 { color: var(--tierra); margin-bottom: .5rem; font-size: 1.05rem; }
+.card p { font-size: .92rem; }
+
+/* Guía pasos */
+.paso {
+  background: var(--blanco); border-radius: 14px; margin-bottom: 1rem;
+  box-shadow: 0 3px 12px rgba(47,62,70,.08); overflow: hidden;
+}
+.paso summary {
+  cursor: pointer; list-style: none; display: flex; align-items: center; gap: .9rem;
+  padding: 1.1rem 1.4rem; font-weight: 700; font-size: 1.1rem; color: var(--tierra-oscuro);
+}
+.paso summary::-webkit-details-marker { display: none; }
+.paso summary::after { content: "＋"; margin-left: auto; color: var(--tierra); font-size: 1.3rem; }
+.paso[open] summary::after { content: "－"; }
+.num {
+  background: var(--tierra); color: var(--blanco); border-radius: 50%;
+  width: 2rem; height: 2rem; display: grid; place-items: center; flex-shrink: 0;
+}
+.contenido { padding: 0 1.4rem 1.4rem; }
+.clave { background: #fdf3e3; border-left: 4px solid var(--dorado); padding: .7rem .9rem; border-radius: 8px; margin-bottom: 1rem; font-size: .95rem; }
+.contenido ul { margin: 0 0 1rem 1.2rem; }
+.contenido li { margin-bottom: .55rem; }
+.accion { background: #eef6ef; border-left: 4px solid var(--verde-hoja); padding: .7rem .9rem; border-radius: 8px; font-size: .95rem; }
+
+/* Dado */
+.accion-dia { text-align: center; }
+.dado-box { margin-top: 1.5rem; }
+.dado-resultado {
+  background: var(--blanco); border-radius: 14px; padding: 1.6rem;
+  font-size: 1.15rem; font-weight: 600; color: var(--tierra-oscuro);
+  box-shadow: 0 3px 12px rgba(47,62,70,.08); margin-bottom: 1.2rem; min-height: 4.5rem;
+  display: grid; place-items: center; transition: transform .2s;
+}
+.dado-resultado.pop { animation: pop .3s ease; }
+@keyframes pop { 50% { transform: scale(1.04); } }
+
+/* Compromiso */
+.piedras { display: grid; gap: .7rem; margin: 1.5rem 0; text-align: left; }
+.piedras label {
+  background: var(--blanco); border-radius: 10px; padding: .8rem 1rem;
+  cursor: pointer; box-shadow: 0 2px 8px rgba(47,62,70,.06); font-size: .98rem;
+  display: flex; align-items: center; gap: .7rem;
+}
+.piedras input { accent-color: var(--tierra); width: 1.1rem; height: 1.1rem; }
+#btn-piedra { display: block; margin: 0 auto; }
+.piedra-msg { text-align: center; margin-top: 1rem; font-weight: 600; color: var(--verde-hoja); min-height: 1.4rem; }
+
+/* Footer */
+.footer {
+  background: var(--piedra); color: #dfe7ea; text-align: center;
+  padding: 2.5rem 6%; margin-top: 2rem;
+}
+.footer .mini { font-size: .85rem; opacity: .8; font-style: italic; margin-top: 1rem; }
+
+@media (max-width: 600px) {
+  .hero-actions .btn { width: 100%; text-align: center; }
+}
