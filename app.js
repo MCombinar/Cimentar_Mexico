@@ -1,6 +1,6 @@
 // Cimentar México — lógica interactiva
 // ⚙️ CONFIGURA AQUÍ TU NÚMERO DE WHATSAPP (con código de país, sin + ni espacios)
-const WHATSAPP_NUMERO = "5215500000000";
+const WHATSAPP_NUMERO = "5215522685235";
 
 const acciones = [
   "📚 Verifica la última noticia que compartiste en 3 fuentes independientes.",
